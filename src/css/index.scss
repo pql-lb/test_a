@@ -2,14 +2,27 @@
     font-family: 'Neue regular';
     src: url('../fonts/NeueMontreal-Regular.otf');
 }
+@font-face {
+    font-family: 'Neue bold';
+    src: url('../fonts/NeueMontreal-Bold.otf');
+}
+$yellow: rgb(255, 234, 0);
+$container: 1000px;
+@media (max-width: 1050px) {
+    $container: 800px;
+}
+@import './circle.scss';
+@import './carousel.scss';
+@import './contact.scss';
+@import './stack.scss';
 * {
     box-sizing: none;
     border: 0; padding: 0; margin: 0;
 }
 .hero {
     background: black; color: white;
-    width: 100%; height: 100vh; top: 0;
-    position: relative; left: 0; padding: 0;
+    width: 100%; min-height: 100vh; top: 0;
+    position: relative; left: 0; padding: 5vh 0;
     display: flex; flex-direction: column; justify-content: center;
 }
 .hero__inner {
@@ -21,16 +34,17 @@
     flex-wrap: wrap;
     font-family: 'Neue regular';
     display: flex;
-    font-size: 32px;
+    font-size: 42px;
     margin-bottom: 30px;
     pointer-events: none;
 }
 .hero__text div {
-    margin-right: 7px;
+    margin-right: 8px;
+    margin-bottom: 3px;
 }
 .hero__contact {
     font-family: 'Neue regular';
-    h2 {font-size: 32px;font-weight: 400;}
+    h2 {font-size: 42px;font-weight: 400;}
     display: flex; gap: 15px;
     align-items: center;
 }
@@ -38,7 +52,7 @@
     border-radius: 50%;
     border: 1px solid white;
     display: flex; justify-content: center; align-items: center;
-    width: 50px; height: 50px;
+    width: 75px; height: 75px;
     background: black;
 }
 @keyframes move {
@@ -53,6 +67,9 @@
     animation: move 1s linear infinite;
     pointer-events: none;
 }
+.hero__circle {
+    cursor: pointer;
+}
 .hero__circle:hover {
     mix-blend-mode: difference;
     background: white;
@@ -61,6 +78,6 @@
 }
 @media (min-width: 1000px) {
     .hero__inner {
-        max-width: 800px;
+        max-width: $container;
     }
 }

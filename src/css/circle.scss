@@ -1,0 +1,55 @@
+.circle-section {
+    background: black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Neue regular';
+    align-items: center;
+    display: flex; flex-direction: column; justify-content: center;
+}
+.circle__inner {
+    width: 90%;
+    height: 100vh;
+    display: flex; align-items: center;
+    justify-content: center;
+}
+.circle__text {
+    display: flex; gap: 8px;
+    font-size: 56px;
+    color: white;
+    flex-wrap: wrap;
+}
+.circle__rotate-outer {
+    width: 90%;
+    position: absolute;
+    display: flex; justify-content: center;
+    align-items: center;
+    height: 100vh;
+} 
+$circleWidth: 500px;
+$circleHeight: 200px;
+.circle__rotate {
+    width: $circleWidth;
+    height: $circleHeight;
+    border: 1px solid $yellow;
+    // background:$yellow;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.circle__rotate-in {
+    background: $yellow; width: 100%;
+    height: 100%;
+    transform: scale(0);
+    border-radius: 100%;
+    position: absolute;
+}
+@media (min-width: 1000px) {
+    .circle__inner {
+        max-width: $container;
+    }
+    .circle__rotate-outer {
+        max-width: $container;
+    } 
+}

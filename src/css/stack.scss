@@ -1,0 +1,90 @@
+.stack {
+    min-height: auto;
+    width: 100%;
+    background: black; color: white;
+    font-family: 'Neue regular';
+    padding: 5vh 0px 10vh;
+    display: flex; align-items: center;
+}
+.stack__inner {
+    max-width: $container;
+    width: 90%;
+    height: 100%;
+    margin-left: auto; margin-right: auto;
+}
+.stack__header {
+    padding: 25px 0px;
+}
+.stack__header h2 {
+    padding: 15px 0px;
+    border-top: 1px solid white;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    font-size: 36px;
+    border-bottom: 1px solid white;
+}
+.stack__header h3 {
+    font-weight: 300;
+    max-width: 50%;
+}
+.stack__table {
+    display: grid;
+    height: 100%; margin-bottom: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5vh;
+    gap: 20px;
+}
+.stack__item {
+    display: flex;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 2vh !important;
+}
+.stack__item div:nth-child(1) .inner {
+    border: 1px solid white;
+    border-radius: 25px;
+    min-width: 50px;
+    text-align: center;
+    display: flex; align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    height: auto !important;
+}
+.stack__item div:nth-child(2) {
+    display: flex; flex-direction: column;
+    gap: 10px;
+}
+.stack__item div:nth-child(2) h3 {
+    font-size: 22px;
+}
+.stack__item div:nth-child(2) h4 {
+    font-weight: 400;
+    font-size: 18px;
+}
+.inner {
+    cursor: pointer;
+}
+.inner:hover {
+    background: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .stack__table {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .stack__item {
+        .inner {
+            max-width: 100px;
+        }
+        width: 100%;
+        flex-direction: column;
+    }
+    .stack__item div:nth-child(2) {
+    
+    }
+    .stack__header h3 {
+        max-width: 100%;
+    }
+}
